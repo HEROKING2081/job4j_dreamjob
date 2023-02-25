@@ -18,5 +18,4 @@ public class VacancyController {
         model.addAttribute("vacancies", vacancyRepository.findAll());
         return "vacancies/list";
     }
-
 }

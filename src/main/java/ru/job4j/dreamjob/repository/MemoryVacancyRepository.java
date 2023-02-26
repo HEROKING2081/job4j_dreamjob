@@ -20,7 +20,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
         save(new Vacancy(0, "Intern Java Developer", "Intern Java Developer - 500$",
                 LocalDateTime.now()));
         save(new Vacancy(0, "Junior Java Developer", "Junior Java Developer - 750$",
-                LocalDateTime.of(2023, 01, 23, 16, 55 )));
+                LocalDateTime.of(2023, 01, 23, 16, 55)));
         save(new Vacancy(0, "Junior+ Java Developer", "Junior+ Java Developer - 1000$",
                 LocalDateTime.of(2023, 02, 25, 18, 15)));
         save(new Vacancy(0, "Middle Java Developer", "Middle Java Developer - 2000$",

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class MemoryCandidateRepository implements  CandidateRepository {
 
-    private static MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
+    private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
 
     private int nextId = 1;
 

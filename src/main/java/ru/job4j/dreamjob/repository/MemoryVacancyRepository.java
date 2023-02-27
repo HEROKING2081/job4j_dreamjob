@@ -21,17 +21,17 @@ public class MemoryVacancyRepository implements VacancyRepository {
 
     private MemoryVacancyRepository() {
         save(new Vacancy(0, "Intern Java Developer", "Intern Java Developer - 500$",
-                LocalDateTime.now(), true));
+                LocalDateTime.now(), true, 1));
         save(new Vacancy(0, "Junior Java Developer", "Junior Java Developer - 750$",
-                LocalDateTime.of(2023, 01, 23, 16, 55), true));
+                LocalDateTime.of(2023, 01, 23, 16, 55), true, 2));
         save(new Vacancy(0, "Junior+ Java Developer", "Junior+ Java Developer - 1000$",
-                LocalDateTime.of(2023, 02, 25, 18, 15), true));
+                LocalDateTime.of(2023, 02, 25, 18, 15), true, 1));
         save(new Vacancy(0, "Middle Java Developer", "Middle Java Developer - 2000$",
-                LocalDateTime.of(2022, 12, 30, 22, 59), true));
+                LocalDateTime.of(2022, 12, 30, 22, 59), true, 3));
         save(new Vacancy(0, "Middle+ Java Developer", "Middle+ Java Developer - 2500$",
-                LocalDateTime.of(2023, 02, 24, 8, 11), true));
+                LocalDateTime.of(2023, 02, 24, 8, 11), true, 1));
         save(new Vacancy(0, "Senior Java Developer", "Senior Java Developer - 5000$",
-                LocalDateTime.of(2023, 01, 01, 15, 00), true));
+                LocalDateTime.of(2023, 01, 01, 15, 00), true, 2));
     }
 
     @Override
@@ -49,7 +49,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
     @Override
     public boolean update(Vacancy vacancy) {
         return vacancies.computeIfPresent(vacancy.getId(), (id, oldVacancy) -> new Vacancy(oldVacancy.getId(),
-                vacancy.getTitle(), vacancy.getDescription(), vacancy.getCreationDate(), vacancy.getVisible())) != null;
+                vacancy.getTitle(), vacancy.getDescription(), vacancy.getCreationDate(), vacancy.getVisible(),
+                vacancy.getCityId())) != null;
     }
 
     @Override

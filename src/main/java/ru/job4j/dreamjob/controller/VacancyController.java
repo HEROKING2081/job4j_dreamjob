@@ -36,7 +36,7 @@ public class VacancyController {
     public String create(HttpServletRequest request) {
         var title = request.getParameter("title");
         var description = request.getParameter("description");
-        vacancyService.save(new Vacancy(0, title, description, LocalDateTime.now()));
+        vacancyService.save(new Vacancy(0, title, description, LocalDateTime.now(), true));
         return "redirect:/vacancies";
     }
 

@@ -21,17 +21,17 @@ public class MemoryCandidateRepository implements  CandidateRepository {
 
     private MemoryCandidateRepository() {
         save(new Candidate(0, "Vasilii Mitin", "Intern Java Developer",
-                LocalDateTime.of(2022, 8, 11, 16, 55), 3));
+                LocalDateTime.of(2022, 8, 11, 16, 55), 3, 0));
         save(new Candidate(0, "Artem Kakoyto", "Junior Java Developer",
-                LocalDateTime.of(2023, 1, 10, 15, 00), 2));
+                LocalDateTime.of(2023, 1, 10, 15, 00), 2, 0));
         save(new Candidate(0, "Kseniya Parshina", "Junior+ Java Developer",
-                LocalDateTime.of(2023, 2, 1, 11, 23), 3));
+                LocalDateTime.of(2023, 2, 1, 11, 23), 3, 0));
         save(new Candidate(0, "Igor Gatman", "Middle Java Developer",
-                LocalDateTime.of(2023, 2, 25, 19, 16), 3));
+                LocalDateTime.of(2023, 2, 25, 19, 16), 3, 0));
         save(new Candidate(0, "Bogdan Prokopenko", "Middle+ Java Developer",
-                LocalDateTime.of(2019, 6, 22, 16, 15), 2));
+                LocalDateTime.of(2019, 6, 22, 16, 15), 2, 0));
         save(new Candidate(0, "Petr Arsentev", "Senior Java Developer",
-                LocalDateTime.of(2020, 11, 22, 10, 00), 1));
+                LocalDateTime.of(2020, 11, 22, 10, 00), 1, 0));
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MemoryCandidateRepository implements  CandidateRepository {
     public boolean update(Candidate candidate) {
         return candidates.computeIfPresent(candidate.getId(), (id, oldCandidate) -> new Candidate(oldCandidate.getId(),
                 candidate.getName(), candidate.getDescription(), candidate.getCreationDate(),
-                candidate.getCityId())) != null;
+                candidate.getCityId(), candidate.getFileId())) != null;
     }
 
     @Override
